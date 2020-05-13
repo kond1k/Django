@@ -5,7 +5,7 @@
 {% block menu %}
 <div class="hero-white">
     <div class="header clearfix">
-        <a href="index.html" class="logo"></a>
+        <a href="{% url 'main' %}" class="logo"></a>
         {% include 'mainapp/includes/inc_menu.html' %}
         <a href="#" class="search"></a>
         <a href="#" class="basket"></a>
@@ -69,11 +69,11 @@
         <div class="related-products clearfix">
             {% for product in same_products %}
             <div class="block">
-                <a href="#"><img src="{% static 'img/' %}{{product.image_src}}" alt="{{ product.alt }}">
+                <a href="#"><img src="{{ media_url }}{{ product.image }}" alt="{{ product.short_desc }}" class="related_product_img">
                     <div class="text">
                         <img src="{% static 'img/icon-hover.png' %}" alt="img">
                         <h4>{{ product.name}}</h4>
-                        <p>{{ product.desc }} </p>
+                        <p>{{ product.description }} </p>
                     </div>
                 </a>
             </div>
@@ -81,4 +81,6 @@
         </div>
     </div>
 </div>
+
+<div class="clr"></div>
 {% endblock %}
