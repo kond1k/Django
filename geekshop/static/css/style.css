@@ -1081,3 +1081,17 @@ td:first-child {
 	height: 300px;
 	margin: 35px;
 }
+
+.auth_title{
+	text-align: center;
+}
+
+.form-horizontal label{
+	display: block;
+	margin-left: 30px;
+}
+
+.form-horizontal input{
+	height: 30px;
+	margin: 30px;
+}
