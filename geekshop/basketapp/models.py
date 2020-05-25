@@ -14,3 +14,22 @@ class Basket(models.Model):
         verbose_name="время добавления", auto_now_add=True)
     total_price = models.PositiveIntegerField(
         verbose_name="общая цена", default=0, blank=True)
+
+    @property
+    def product_cost(self):
+        "Возвращает общую стоимость продуктов этого типа"
+        return self.product.price * self.product.quantity
+
+    @property
+    def total_quantity(self):
+        "Колличество товаро для пользователя"
+        _items = Basket.objects.filter(user=self.user)
+        _totalquantity = sum(list(map(lambda x: x.quantity, _items)))
+        return _totalquantity
+
+    @property
+    def total_cost(self):
+        "Возвращает полную стоимость для пользователя"
+        _items = Basket.objects.filter(user=self.user)
+        _totalcost = sum(list(map(lambda x: x.product_cost, _items)))
+        return _totalcost
