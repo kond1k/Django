@@ -12,7 +12,7 @@ def main(request):
     title = "главная"
     products = Product.objects.all()
 
-    content = {"title": title, "products": products}
+    content = {"title": title, "products": products, "media_url": settings.MEDIA_URL}
     return render(request, "mainapp/index.html", content)
 
 
@@ -60,6 +60,18 @@ def products(request, pk=None):
     if pk:
         print(f"User select category: {pk}")
     return render(request, "mainapp/products.html", content)
+
+
+def product(request, pk):
+    title = "Продукты"
+    content = {
+        "title": title,
+        "links_menu": ProductCategory.objects.all(),
+        "product": get_object_or_404(Product, pk=pk),
+        "basket": get_basket(request.user),
+        "media_url": settings.MEDIA_URL,
+    }
+    return render(request, "mainapp/product.html", content)
 
 
 def contact(request):
