@@ -1697,3 +1697,13 @@ td:first-child {
 .auth_cont {
     background-image: url(/static/img/slider.jpg);
 }
+
+.new_category_form button {
+    margin-left: 35%;
+}
+
+.text-center {
+    font-size: larger;
+    text-align: center;
+    margin: 15px;
+}
