@@ -1,4 +1,4 @@
-from adminapp.forms import ProductCategoryEditForm, ShopUserAdminEditForm
+from adminapp.forms import ProductCategoryEditForm, ShopUserAdminEditForm, ProductEditForm
 from authapp.forms import ShopUserRegisterForm
 from authapp.models import ShopUser
 from mainapp.models import Product, ProductCategory
@@ -6,7 +6,8 @@ from mainapp.models import Product, ProductCategory
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
 from django.conf import settings
-from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse, reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
