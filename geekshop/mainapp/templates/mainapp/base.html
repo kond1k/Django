@@ -6,28 +6,19 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {% block title %}
-        {{title|capfirst}}
-        {% endblock %}
+        {% block title %} {{title|capfirst}} {% endblock %}
     </title>
     {% block css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
-    {% endblock %}
-
-    {% block js %}
-    {% endblock %}
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}"> {% endblock %} {% block js %} {% endblock %}
 </head>
 
 <body>
     <div class="container">
-        {% block menu %}
-
-        {% endblock %}
-
-        {% block content %}
-
-        {% endblock %}
+        {% block menu %} {% endblock %}
+        <div class="content">
+            {% block content %} {% endblock content %}
+        </div>
 
     </div>
 
