@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/kondik/Projects/Django/venv/bin/python3",
+    "python.pythonPath": "/mnt/e/Projects/Django/venv/bin/python3",
     "python.linting.pylintArgs":[
         "--load-plugins" ,
         "pylint_django"
