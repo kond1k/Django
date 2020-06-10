@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "/mnt/e/Projects/Django/venv/bin/python3",
-    "python.linting.pylintArgs":[
-        "--load-plugins" ,
-        "pylint_django"
-    ],
-    "python.formatting.provider": "black",
-}
