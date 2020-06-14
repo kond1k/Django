@@ -11,9 +11,16 @@
     </li>
     {% if user.is_authenticated %}
     <li>
-        <a href="{% url 'auth:edit' %}">
-            {{ user.first_name|default:'Пользователь' }}
-        </a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="" data-toggle="dropdown">
+                {{ user.first_name|default:'Пользователь' }}
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li style="width: 100%;"><a href="{% url 'auth:edit' %}" style="text-align: center;">профиль</a></li>
+                <li style="width: 100%;"><a href="{% url 'ordersapp:orders_list' %}" style="text-align: center;">заказы</a></li>
+            </ul>
+        </div>
     </li>
     {% endif %} {% if user.is_superuser%}
     <li>
