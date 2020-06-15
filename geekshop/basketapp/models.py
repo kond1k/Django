@@ -12,13 +12,11 @@ class Basket(models.Model):
         verbose_name="количество", default=0)
     add_datetime = models.DateTimeField(
         verbose_name="время добавления", auto_now_add=True)
-    total_price = models.PositiveIntegerField(
-        verbose_name="общая цена", default=0, blank=True)
 
     @property
     def product_cost(self):
         "Возвращает общую стоимость продуктов этого типа"
-        return self.product.price * self.product.quantity
+        return self.product.price * self.quantity
 
     @property
     def total_quantity(self):
@@ -33,3 +31,8 @@ class Basket(models.Model):
         _items = Basket.objects.filter(user=self.user)
         _totalcost = sum(list(map(lambda x: x.product_cost, _items)))
         return _totalcost
+
+
+    @staticmethod
+    def get_items(user):
+        return Basket.objects.filter(user=user).order_by("product__category")
