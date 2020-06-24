@@ -1,0 +1,14 @@
+http://localhost:8000/ POST username=user1&password=user1
+http://localhost:8000/contact/ POST username=user1&password=user1
+http://localhost:8000/products/ POST username=user1&password=user1
+http://localhost:8000/products/category/1/ POST username=user1&password=user1
+http://localhost:8000/products/category/2/ POST username=user1&password=user1
+http://localhost:8000/products/category/3/ POST username=user1&password=user1
+http://localhost:8000/products/category/4/ POST username=user1&password=user1
+http://localhost:8000/basket/ POST username=user1&password=user1
+http://localhost:8000/auth/edit/ POST username=user1&password=user1
+http://localhost:8000/auth/register/ POST username=user1&password=user1
+http://localhost:8000/order/ POST username=user1&password=user1
+http://localhost:8000/order/read/2/ POST username=user1&password=user1
+http://localhost:8000/order/update/3/ POST username=user1&password=user1
+http://localhost:8000/order/update/2/ POST username=user1&password=user1
