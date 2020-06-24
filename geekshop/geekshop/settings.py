@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'adminapp',
     'social_django',
     'ordersapp',
+    "debug_toolbar",
+    "template_profiler_panel",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'geekshop.urls'
@@ -85,10 +89,6 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    # }
     "default": {
         "NAME": "geekshop",
         "ENGINE": "django.db.backends.postgresql",
@@ -97,6 +97,16 @@ DATABASES = {
         "HOST": "localhost",
     }
 }
+
+
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+
 
 
 # Password validation
