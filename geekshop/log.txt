@@ -1,0 +1,123 @@
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c50
+** SIEGE 4.0.4
+** Preparing 50 concurrent users for battle.
+The server is now under siege...
+Transactions:                  13500 hits
+Availability:                 100.00 %
+Elapsed time:                 219.35 secs
+Data transferred:               6.94 MB
+Response time:                  0.81 secs
+Transaction rate:              61.55 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                   49.61
+Successful transactions:        1500
+Failed transactions:               0
+Longest transaction:           12.36
+Shortest transaction:           0.00
+ 
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c100
+** SIEGE 4.0.4
+** Preparing 100 concurrent users for battle.
+The server is now under siege...
+Transactions:                  27000 hits
+Availability:                 100.00 %
+Elapsed time:                 433.22 secs
+Data transferred:              13.87 MB
+Response time:                  1.60 secs
+Transaction rate:              62.32 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                   99.54
+Successful transactions:        3000
+Failed transactions:               0
+Longest transaction:           23.86
+Shortest transaction:           0.01
+ 
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c150
+** SIEGE 4.0.4
+** Preparing 150 concurrent users for battle.
+The server is now under siege...
+Transactions:                  40500 hits
+Availability:                 100.00 %
+Elapsed time:                 648.80 secs
+Data transferred:              20.81 MB
+Response time:                  2.40 secs
+Transaction rate:              62.42 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                  149.70
+Successful transactions:        4500
+Failed transactions:               0
+Longest transaction:           36.83
+Shortest transaction:           0.00
+
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c200
+** SIEGE 4.0.4
+** Preparing 200 concurrent users for battle.
+The server is now under siege...
+Transactions:                  54000 hits
+Availability:                 100.00 %
+Elapsed time:                 931.63 secs
+Data transferred:              27.74 MB
+Response time:                  3.45 secs
+Transaction rate:              57.96 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                  199.86
+Successful transactions:        6000
+Failed transactions:               0
+Longest transaction:           48.54
+Shortest transaction:           0.00
+
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c255
+** SIEGE 4.0.4
+** Preparing 255 concurrent users for battle.
+The server is now under siege...
+Transactions:                  68850 hits
+Availability:                 100.00 %
+Elapsed time:                1197.65 secs
+Data transferred:              35.37 MB
+Response time:                  4.43 secs
+Transaction rate:              57.49 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                  254.84
+Successful transactions:        7650
+Failed transactions:               0
+Longest transaction:           64.50
+Shortest transaction:           0.00
+
+После изменения форм и представлений
+
+(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c255
+** SIEGE 4.0.4
+** Preparing 255 concurrent users for battle.
+The server is now under siege...
+
+Transactions:                  68850 hits
+Availability:                 100.00 %
+Elapsed time:                1128.50 secs
+Data transferred:              35.37 MB
+Response time:                  4.18 secs
+Transaction rate:              61.01 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                  254.84
+Successful transactions:        7650
+Failed transactions:               0
+Longest transaction:           64.65
+Shortest transaction:           0.00
+
+После добавления индексов
+
+</html>(venv) geekshop@geekshop:~/Django/geekshop$ siege -f /home/geekshop/Django/geekshop/test_urls.txt -d0 -r15 -c255
+** SIEGE 4.0.4
+** Preparing 255 concurrent users for battle.
+The server is now under siege...
+Transactions:                  68850 hits
+Availability:                 100.00 %
+Elapsed time:                1084.53 secs
+Data transferred:              35.37 MB
+Response time:                  4.01 secs
+Transaction rate:              63.48 trans/sec
+Throughput:                     0.03 MB/sec
+Concurrency:                  254.85
+Successful transactions:        7650
+Failed transactions:               0
+Longest transaction:           60.52
+Shortest transaction:           0.00

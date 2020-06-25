@@ -1,0 +1,14 @@
+http://localhost:8000/auth/login/?next=/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/contact/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/products/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/products/category/1/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/products/category/2/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/products/category/3/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/products/category/4/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/basket/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/auth/edit/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/auth/register/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/order/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/order/read/1/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/order/update/2/ POST username=admin&password=admin
+http://localhost:8000/auth/login/?next=/order/update/1/ POST username=admin&password=admin
