@@ -58,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    # "django.middleware.cache.FetchFromCacheMiddleware",  # for entire site caching
 ]
 
 CACHE_MIDDLEWARE_ALIAS = "default"
