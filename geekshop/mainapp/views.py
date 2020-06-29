@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.cache import cache
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.views.decorators.cache import cache_page
 
 
 def get_links_menu():
@@ -151,6 +152,7 @@ def product(request, pk):
     return render(request, "mainapp/product.html", content)
 
 
+@cache_page(600)
 def contact(request):
     title = "о нас"
     visit_date = datetime.datetime.now()
