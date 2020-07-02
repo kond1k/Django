@@ -32,7 +32,8 @@ def login(request):
                 return HttpResponseRedirect(request.POST["next_page"])
             return HttpResponseRedirect(reverse("main"))
 
-    content = {"title": title, "login_form": login_form, "next_page": next_page}
+    content = {"title": title, "login_form": login_form,
+               "next_page": next_page}
     return render(request, "authapp/login.html", content)
 
 
@@ -60,13 +61,15 @@ def register(request):
     content = {"title": title, "register_form": register_form}
     return render(request, "authapp/register.html", content)
 
+
 @login_required
 @transaction.atomic
 def edit(request):
     title = "редактирование"
 
     if request.method == "POST":
-        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
+        edit_form = ShopUserEditForm(
+            request.POST, request.FILES, instance=request.user)
         profile_form = ShopUserProfileEditForm(
             request.POST, instance=request.user.shopuserprofile
         )
@@ -75,7 +78,8 @@ def edit(request):
             return HttpResponseRedirect(reverse("auth:edit"))
     else:
         edit_form = ShopUserEditForm(instance=request.user)
-        profile_form = ShopUserProfileEditForm(instance=request.user.shopuserprofile)
+        profile_form = ShopUserProfileEditForm(
+            instance=request.user.shopuserprofile)
 
     content = {
         "title": title,
@@ -87,7 +91,8 @@ def edit(request):
 
 
 def send_verify_mail(user):
-    verify_link = reverse("auth:verify", args=[user.email, user.activation_key])
+    verify_link = reverse("auth:verify", args=[
+                          user.email, user.activation_key])
 
     title = f"Подтверждение учетной записи {user.username}"
     message = f"Для подтверждения учетной записи {user.username} \
@@ -96,7 +101,8 @@ def send_verify_mail(user):
 
     print(f"from: {settings.EMAIL_HOST_USER}, to: {user.email}")
     return send_mail(
-        title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False,
+        title, message, settings.EMAIL_HOST_USER, [
+            user.email], fail_silently=False,
     )
 
 
